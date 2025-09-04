@@ -1,0 +1,102 @@
+.f-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 3rem;
+  background: var(--primary);
+  color: #fff;
+  flex-wrap: wrap;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  row-gap: 2rem;
+}
+
+/* LEFT SECTION */
+.f-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  max-width: 250px;
+  line-height: 1.4;
+}
+
+.f-left .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: var(--orange-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* MENU SECTION */
+.f-menu {
+    margin-top: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.f-menu a {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.f-menu a:hover {
+  color: #ffd699;
+}
+
+/* RIGHT SECTION */
+.f-right {
+    margin-top: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  text-align: right;
+  max-width: 250px;
+}
+
+.f-right p {
+  margin: 0;
+}
+
+.f-right a {
+  color: #ffd699;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.f-right a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .f-container {
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .f-left, .f-menu, .f-right {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .f-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  .f-right {
+    text-align: center;
+  }
+}

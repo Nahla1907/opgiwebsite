@@ -1,0 +1,40 @@
+.c-container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  flex-wrap: wrap;         /* allow wrapping on small screens */
+  align-items: center;     /* center items vertically */
+  text-align: center;      /* center align text if any */
+}
+
+.c-container a img {
+  width: 7rem;
+  max-width: 100%;         /* don’t overflow parent */
+  height: auto;            /* keep aspect ratio */
+}
+
+/* 📱 Small screens */
+@media (max-width: 768px) {
+  .c-container {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .c-container a img {
+    width: 5rem;
+  }
+}
+
+/* 📱 Extra-small screens */
+@media (max-width: 480px) {
+  .c-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .c-container a img {
+    width: 4rem;
+  }
+}

@@ -1,0 +1,106 @@
+.v-container .image-container {
+  border: 8px solid rgba(179, 151, 232, 0.12);
+}
+
+.v-container > div {
+  flex: 1;
+}
+
+.v-right {
+  gap: 0.5rem;
+}
+
+.accordion {
+  margin-top: 2rem;
+  border: none;
+}
+
+.accordionItem {
+  background: white;
+  border: 0.8px solid rgba(128, 128, 128, 0.143);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.accordionItem.expanded {
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+}
+
+.accordionButton {
+  background: white;
+  padding: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.icon {
+  padding: 10px;
+  background: #eeeeff;
+  border-radius: 5px;
+}
+
+.icon svg {
+  fill: var(--blue-gradient);
+}
+
+.accordionButton .primaryText {
+  font-size: 1.1rem;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .accordionButton .primaryText {
+    font-size: 1rem;
+  }
+  .icon {
+    padding: 8px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .v-container {
+    flex-direction: column-reverse; /* ✅ text first, image under */
+    align-items: center;
+    text-align: center;
+  }
+
+  .v-container .image-container {
+    width: 90%;
+    margin-top: 1.5rem; /* space between text and image */
+  }
+
+  .accordionButton {
+    padding: 0.8rem;
+  }
+
+  .accordionButton .primaryText {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* Extra Small (phones) */
+@media (max-width: 480px) {
+  .v-container .image-container {
+    width: 100%;
+    border-width: 4px; /* thinner border */
+  }
+
+  .accordionButton .primaryText {
+    font-size: 0.85rem;
+  }
+
+  .icon {
+    padding: 6px;
+  }
+
+  .accordionItem {
+    margin-bottom: 15px;
+  }
+}
