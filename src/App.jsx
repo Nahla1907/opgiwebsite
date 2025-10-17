@@ -6,6 +6,7 @@ import Announce from './components/Announces/Announce';
 import OurProjects from './components/OurProjects/OurProjects';
 import Contact from "./components/Contact/Contact.jsx";
 import Footer from './components/Footer/Footer.jsx';
+import Epayment from './components/epayment/Epayment.jsx';
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
       <section id="annonces">
         <Announce />
       </section>
+{/* epayment */}
+      <section id="epayment">
+        <Epayment />
+      </section>
+      
 
       {/* Contact */}
       <section id="contact">

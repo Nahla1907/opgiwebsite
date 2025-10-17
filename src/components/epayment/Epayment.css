@@ -1,0 +1,32 @@
+.water-text {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 2px #00bfff; /* outline */
+  overflow: hidden;
+}
+
+.water-text::before {
+  content: attr(class); /* fallback */
+  content: "Coming Soon";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #00bfff;
+  animation: fillWater 5s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes fillWater {
+  0% {
+    top: 100%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
