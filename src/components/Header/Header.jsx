@@ -8,12 +8,18 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   // ✅ toggle menu position for mobile
-  const getMenuStyles = () => {
-    if (document.documentElement.clientWidth <= 800) {
-      return { right: menuOpened ? "0" : "-100%" };
-    }
-    return {}; // normal layout for desktop
-  };
+  // ✅ toggle menu position for mobile
+const getMenuStyles = () => {
+  if (window.innerWidth <= 800) {
+    return {
+      right: menuOpened ? "0" : "-100%",
+      opacity: menuOpened ? "1" : "0",
+      visibility: menuOpened ? "visible" : "hidden",
+      transition: "all 0.3s ease-in-out",
+    };
+  }
+  return {};
+};
 
   // ✅ detect scroll (only affects navbar appearance)
   useEffect(() => {
@@ -30,28 +36,34 @@ const Header = () => {
         <img src="./logo11.png" alt="logo" width={80} />
 
         {/* ✅ Close when clicking outside */}
-        <OutsideClickHandler onOutsideClick={() => setMenuOpened(false)}>
-          <div
-            className="flexCenter h-menu"
-            style={getMenuStyles()}
-          >
-            <a href="#home" onClick={() => setMenuOpened(false)}>Accueil</a>
-            <a href="#projects" onClick={() => setMenuOpened(false)}>Projet</a>
-            <a href="#annonces" onClick={() => setMenuOpened(false)}>Annonces</a>
-            <a href="#contact" onClick={() => setMenuOpened(false)}>Contact</a>
-            <button className="button" onClick={() => setMenuOpened(false)}>
-              <a href="">E-payment</a>
-            </button>
-          </div>
-        </OutsideClickHandler>
+       <OutsideClickHandler onOutsideClick={() => setMenuOpened(false)}>
+  <div>
+    <div
+      className="flexCenter h-menu"
+      style={getMenuStyles()}
+    >
+      <a href="#home" onClick={() => setMenuOpened(false)}>Accueil</a>
+      <a href="#projects" onClick={() => setMenuOpened(false)}>Projet</a>
+      <a href="#annonces" onClick={() => setMenuOpened(false)}>Annonces</a>
+      <a href="#contact" onClick={() => setMenuOpened(false)}>Contactez-nous</a>
+      <button className="button" onClick={() => setMenuOpened(false)}>
+        <a href="">E-payment</a>
+      </button>
+    </div>
 
-        {/* ✅ Toggle open/close on click */}
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpened((prev) => !prev)}
-        >
-          <CgMenuRound size={55} />
-        </div>
+
+    {/* ✅ Move the icon inside */}
+    <div
+      className="menu-icon"
+      onClick={() => setMenuOpened((prev) => !prev)}
+    >
+      <CgMenuRound size={55} />
+    </div>
+  </div>
+</OutsideClickHandler>
+
+
+        
       </div>
     </section>
   );

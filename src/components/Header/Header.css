@@ -26,17 +26,15 @@
 
 .h-menu {
   display: flex;
-  gap: 3.5rem;
-  border-bottom: 3px solid #DCA06D; /* Add this line */
-  padding-bottom: 0.5rem; /* Optional: spacing between text and border */
-  transition: all 0.3s ease-in-out;
+  align-items: center;
+  gap: 2rem;
 }
 
 .h-menu a {
   display: inline-block;
-  color: var(--secondary);
+  color:  white;;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 22px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -48,32 +46,60 @@
 .h-menu > *:hover {
   cursor: pointer;
 }
- .menu-icon{
-  display: none;
+ .menu-icon {
+  position: fixed;          /* stays visible even when menu slides in */
+  top: 0.5rem;              /* adjust spacing */
+  right: 1.5rem;
+  z-index: 9999;            /* make sure it's above the menu */
   cursor: pointer;
- }
-
- @media (max-width: 768px){
-  .menu-icon{
-    display: block;
-  }
-  .h-menu {
-    z-index: 99;
-  color: white;
-  position: absolute;
-  top: 4rem;
-  right: -10%;
-  background: var(--orange-gradient);
-  display: flex;              /* make sure it's flex */
-  flex-direction: column;
-  align-items: center;        /* center horizontally */
-  justify-content: center;    /* center vertically */
-  font-weight: 500;
-  gap: 2rem;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-  transition: all 300ms ease-in-out;
+  color: white;             /* optional: ensure visibility */
+  background: rgba(0, 0, 0, 0.4); /* optional: translucent background */
+  border-radius: 10%;
+  padding: 0.3rem;
+  backdrop-filter: blur(10px); /* optional: glassy look */
 }
 
- }
+ /* ✅ Mobile styles */
+@media (max-width: 800px) {
+  .h-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 45%;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--orange-gradient);
+    backdrop-filter: blur(100px);
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+  }
+
+  .h-menu a,
+  .h-menu button {
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    z-index: 101; /* above menu */
+  }
+}
+
+/* ✅ Desktop */
+@media (min-width: 801px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .h-menu {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    background: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}

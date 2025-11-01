@@ -157,9 +157,9 @@ function Contact() {
       <div className="contact-container">
         {/* Left side - Contact Form */}
         <div className="contact-left">
-          <h2>Contact Us</h2>
+          <h2 className="orangeText">CONTACTEZ-NOUS</h2>
           <form className="contact-form" onSubmit={handleSubmit}>
-            <label htmlFor="fullName">Full Name</label>
+            <label htmlFor="fullName">Nom complet</label>
             <input
               type="text"
               id="fullName"
@@ -170,7 +170,7 @@ function Contact() {
               required
             />
 
-            <label htmlFor="phone">Phone Number</label>
+            <label htmlFor="phone">Numéro de téléphone</label>
             <input
               type="tel"
               id="phone"
@@ -181,7 +181,7 @@ function Contact() {
               required
             />
 
-            <label htmlFor="subject">Subject</label>
+            <label htmlFor="subject">Sujet</label>
             <input
               type="text"
               id="subject"
@@ -203,13 +203,13 @@ function Contact() {
               required
             ></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit">Envoyer le message</button>
           </form>
         </div>
 
         {/* Right side - Map */}
         <div className="contact-right">
-          <h2>Find Us</h2>
+          <h2>Nous trouver</h2>
           <iframe
             title="OPGI Djanet Map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7092427.152866736!2d-1.093161911685734!3d29.774773097908643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x122c370049c4237d%3A0x5f8845f2729fe91f!2sOPGI%20direction%20g%C3%A9n%C3%A9rale%20djanet!5e0!3m2!1sfr!2sdz!4v1756935915540!5m2!1sfr!2sdz"
