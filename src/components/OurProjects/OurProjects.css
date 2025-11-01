@@ -189,27 +189,65 @@
 
 /* ========== RESPONSIVE STYLES ========== */
 
-/* Tablets */
+/* Tablets (≤ 1024px) */
 @media (max-width: 1024px) {
+  .v-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
   .accordionButton .primaryText {
     font-size: 1rem;
   }
+
   .icon {
     padding: 8px;
   }
+
+  .main-image {
+    max-width: 500px;
+  }
+
+  .thumbnail-row {
+    max-width: 700px;
+    gap: 0.6rem;
+  }
+
+  .thumbnail {
+    width: 90px;
+    height: 70px;
+  }
 }
 
-/* Mobile */
+/* Mobile (≤ 768px) */
 @media (max-width: 768px) {
   .v-container {
-    flex-direction: column-reverse; /* ✅ text first, image under */
+    flex-direction: column-reverse; /* text first, image after */
     align-items: center;
     text-align: center;
+    gap: 2rem;
   }
 
   .v-container .image-container {
-    width: 90%;
-    margin-top: 1.5rem; /* space between text and image */
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .main-image {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .thumbnail-row {
+    margin: 1rem auto;
+    max-width: 90%;
+    justify-content: center;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 65px;
   }
 
   .accordionButton {
@@ -221,12 +259,30 @@
   }
 }
 
-
-/* Extra Small (phones) */
+/* Extra Small Phones (≤ 480px) */
 @media (max-width: 480px) {
+  .v-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
   .v-container .image-container {
     width: 100%;
-    border-width: 4px; /* thinner border */
+    border-width: 4px;
+    margin-top: 1rem;
+  }
+
+  .main-image {
+    max-width: 100%;
+  }
+
+  .thumbnail-row {
+    gap: 0.5rem;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 60px;
   }
 
   .accordionButton .primaryText {
