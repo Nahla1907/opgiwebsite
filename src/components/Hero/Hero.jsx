@@ -1,9 +1,24 @@
 import React from 'react'
 import "./Hero.css"
 import CountUp from "react-countup"
+import { Helmet } from "react-helmet";
 
 const Hero = () => {
   return (
+    <>
+      <Helmet>
+        <title>OPGI Djanet - Office de Promotion et de Gestion Immobilière</title>
+        <meta
+          name="description"
+          content="Site officiel de l'OPGI Djanet. Découvrez nos programmes, projets immobiliers, et services de gestion immobilière dans la wilaya de Djanet."
+        />
+        <meta
+          name="keywords"
+          content="OPGI, Djanet, immobilier, logements, OPGI Djanet, Office de Promotion et de Gestion Immobilière, Algérie"
+        />
+        <meta name="author" content="OPGI Djanet" />
+        <link rel="canonical" href="https://opgiwebsite.vercel.app/" />
+      </Helmet>
     <section className='hero-wrapper'>
       <div className='paddings innerWidth flexCenter hero-container'>
         
@@ -34,6 +49,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
+    </>
   )
 }
 
