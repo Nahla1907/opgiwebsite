@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://opgiwebsite.vercel.app/sitemap.xml
