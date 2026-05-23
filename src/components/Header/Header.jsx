@@ -46,9 +46,15 @@ const getMenuStyles = () => {
       <a href="#projects" onClick={() => setMenuOpened(false)}>Projet</a>
       <a href="#annonces" onClick={() => setMenuOpened(false)}>Annonces</a>
       <a href="#contact" onClick={() => setMenuOpened(false)}>Contactez-nous</a>
-      <button className="button" onClick={() => setMenuOpened(false)}>
-        <a href="">E-payment</a>
-      </button>
+       <button
+          className="button"
+          onClick={() => {
+            setMenuOpened(false);
+            window.open("https://sakani.dz/fr/login", "_blank");
+          }}
+        >
+          E-payment
+        </button>
     </div>
 
 
